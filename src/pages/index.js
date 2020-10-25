@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import useInicio from "../hooks/useInicio"
 
 import heroCSS from "../css/hero.module.css"
+import Encuentra from "../components/encuentra"
 
 const ImageBackground = styled(BackgroundImage)`
   height: 600px;
@@ -43,6 +44,7 @@ const Index = () => {
           </p>
         </div>
       </main>
+      <Encuentra />
     </Layout>
   )
 }
