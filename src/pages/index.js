@@ -6,6 +6,8 @@ import BackgroundImage from "gatsby-background-image"
 import Layout from "../components/layout"
 import useInicio from "../hooks/useInicio"
 
+import heroCSS from "../css/hero.module.css"
+
 const ImageBackground = styled(BackgroundImage)`
   height: 600px;
 `
@@ -18,8 +20,10 @@ const Index = () => {
   return (
     <Layout>
       <ImageBackground tag="section" fluid={imagen.sharp.fluid} fadeIn="soft">
-        <div>
-          <h1>Venta de casas y departamentos exclusivos</h1>
+        <div className={heroCSS.imagenbd}>
+          <h1 className={heroCSS.titulo}>
+            Venta de casas y departamentos exclusivos
+          </h1>
         </div>
       </ImageBackground>
       <main>
