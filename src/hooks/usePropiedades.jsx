@@ -32,7 +32,18 @@ const usePropiedades = () => {
     }
   `)
 
-  return datos.allStrapiPropiedades.nodes
+  return datos.allStrapiPropiedades.nodes.map(propiedad => ({
+    nombre: propiedad.nombre,
+    descripcion: propiedad.descripcion,
+    imagen: propiedad.imagen,
+    id: propiedad.id,
+    wc: propiedad.wc,
+    estacionamiento: propiedad.estacionamiento,
+    habitaciones: propiedad.habitaciones,
+    agentes: propiedad.agentes,
+    precio: propiedad.precio,
+    categoria: propiedad.categoria,
+  }))
 }
 
 export default usePropiedades
