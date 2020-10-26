@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "@emotion/styled"
 import Image from "gatsby-image"
+import { Link } from "gatsby"
+import useSlug from "url-slug"
 
 import Iconos from "./iconos"
 
@@ -24,6 +26,19 @@ const Contenido = styled.div`
   }
 `
 
+const Boton = styled(Link)`
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #75ab00;
+  width: 100%;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+`
+
 const PropiedadPreview = ({ propiedad }) => {
   const {
     nombre,
@@ -37,7 +52,7 @@ const PropiedadPreview = ({ propiedad }) => {
 
   return (
     <Card>
-      <Image fluid={imagen.sharp.fluid} />
+      <Image fluid={imagen.sharp.fluid} alt={descripcion} />
       <Contenido>
         <h3>{nombre}</h3>
         <p className="precio">$ {precio}</p>
@@ -46,6 +61,7 @@ const PropiedadPreview = ({ propiedad }) => {
           estacionamiento={estacionamiento}
           habitaciones={habitaciones}
         />
+        <Boton to={useSlug(nombre)}>Visitar propiedad</Boton>
       </Contenido>
     </Card>
   )

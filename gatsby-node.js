@@ -22,6 +22,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     actions.createPage({
       path: urlSlug(propiedad.nombre),
       component: require.resolve("./src/components/propiedades.jsx"),
+      context: {
+        id: propiedad.id,
+      },
     })
   })
 }
