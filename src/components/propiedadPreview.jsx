@@ -61,7 +61,7 @@ const PropiedadPreview = ({ propiedad }) => {
           estacionamiento={estacionamiento}
           habitaciones={habitaciones}
         />
-        <Boton to={useSlug(nombre)}>Visitar propiedad</Boton>
+        <Boton to={`/${useSlug(nombre)}`}>Visitar propiedad</Boton>
       </Contenido>
     </Card>
   )
